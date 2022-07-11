@@ -12,7 +12,6 @@ int main() {
     std::cin >> N;
 
     for (int i = 1; i <= N; i++) {
-
         std::cin >> V >> S;
 
         if ((1 == S) && (V > max_V))
@@ -21,7 +20,7 @@ int main() {
             max_V = V;
             number = i;
         } else 
-
+        
         {
             continue;
         }
@@ -30,7 +29,6 @@ int main() {
 
     if (flag == 0)
     {
-
         std::cout << -1 << std::endl;
 
         return 0;
