@@ -1,37 +1,42 @@
 #include <iostream>
 
 int main() {
-	int N = 0,
-		V = 0,
-		S = 0,
+    int N = 0,
+        V = 0,
+        S = 0,
    number = 0,
-    max_V = 0,
-    flag  = 0;
+    max_V = 0;
 
-	std::cin >> N;
+    bool flag = 0;
 
-	for (int i = 1; i <= N; i++) {
+    std::cin >> N;
 
-		std::cin >> V >> S;
+    for (int i = 1; i <= N; i++) {
 
-		if ((1 == S) && (V > max_V))
-		{
-			flag = 1;
-			max_V = V;
-			number = i;
-		}
+        std::cin >> V >> S;
 
-	}
+        if ((1 == S) && (V > max_V))
+        {
+            flag = 1;
+            max_V = V;
+            number = i;
+        } else 
 
-	if (flag == 0)
-	{
+        {
+            continue;
+        }
 
-		std::cout << -1 << std::endl;
+    }
 
-		return 0;
-	}
+    if (flag == 0)
+    {
 
-	std::cout << number << std::endl;
+        std::cout << -1 << std::endl;
 
-	return 0;
+        return 0;
+    }
+
+    std::cout << number << std::endl;
+
+    return 0;
 }
