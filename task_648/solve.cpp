@@ -1,16 +1,13 @@
 #include <iostream>
 #include <algorithm>
 
-/* Read array with current size
+/* ReadArr
+   Read array with current size
     arr    - array
     size   - size of array
     return - filled array
 */
-
-void ReadArr(int* arr, int size) {
-    for (int i = 0; i < size; ++i)
-        std::cin >> arr[i];
-}
+void ReadArr(int* arr, int size);
 
 /* BubbleSort
    Sorts elements of array in ascending order
@@ -19,15 +16,7 @@ void ReadArr(int* arr, int size) {
     return     - array in ascending order
     complexity = o(n^2)
 */
-
-void BubbleSort(int* arr, int size) {
-    for (int _ = 0; _ < size - 1; ++_) {
-        for (int i = 0; i < size - 1; ++i){
-            if (arr[i] > arr[i + 1])
-                std::swap(arr[i], arr[i+1]);
-        }
-    }
-}
+void BubbleSort(int* arr, int size);
 
 int main() {
     int n = 0;
@@ -56,4 +45,18 @@ int main() {
 
     delete[] arr;
     return 0;
+}
+
+void ReadArr(int* arr, int size) {
+    for (int i = 0; i < size; ++i)
+        std::cin >> arr[i];
+}
+
+void BubbleSort(int* arr, int size) {
+    for (int i = 0; i < size - 1; ++i) {
+        for (int j = 0; j < size - 1; ++j){
+            if (arr[j] > arr[j + 1])
+                std::swap(arr[j], arr[j+1]);
+        }
+    }
 }
