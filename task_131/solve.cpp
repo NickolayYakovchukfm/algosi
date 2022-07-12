@@ -8,34 +8,27 @@ int main() {
     std::cin >> n;
 
     int number = 0,
-         max_v = 0;
+        max_v  = 0;
 
     bool flag = 0;
 
-    for (int i = 1; i <= n; i++){
+    for (int i = 0; i < n; i++) {
         std::cin >> v >> s;
 
         if (0 == s)
-        {
             continue;
-        }
 
-        if ((1 == s) && (v > max_v))
-        {
+        if (v > max_v) {
             flag = 1;
             max_v = v;
-            number = i;
+            number = i + 1;
         }
     }
 
     if (!flag)
-    {
         std::cout << -1 << std::endl;
-
-        return 0;
-    }
-
-    std::cout << number << std::endl;
+    else
+        std::cout << number << std::endl;
 
     return 0;
 }
